@@ -1,16 +1,58 @@
-# React + Vite
+# React Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React and Vite application containing two multi-step workflows:
 
-Currently, two official plugins are available:
+- **Project creation wizard** at `/` with four steps for project details, billing, notifications, and access settings.
+- **Account creation wizard** at `/task2` with three steps for profile, business information, and additional users.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Form drafts are automatically saved in the browser. Completed projects and accounts are stored in `localStorage`, so no backend or database is required to run the application locally.
 
-## React Compiler
+## Requirements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18 or newer
+- npm
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies:
+
+	```bash
+	npm install
+	```
+
+2. Start the development server:
+
+	```bash
+	npm run dev
+	```
+
+3. Open the URL printed by Vite, usually `http://localhost:5173`.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server with hot reload. |
+| `npm run build` | Create a production build in `dist/`. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run lint` | Run ESLint across the project. |
+
+## Project structure
+
+```text
+src/
+  components/       Shared form and layout components
+  hooks/            Reusable React hooks
+  layout/           Wizard layouts
+  pages/Task1/      Project creation wizard
+  pages/Task2/      Account creation wizard
+```
+
+## Data storage
+
+The app uses browser `localStorage` for client-side persistence:
+
+- `projectDraft` and `accountDraft` store incomplete form data.
+- `projects` and `accounts` store completed submissions.
+
+To clear saved data, remove the site data for the local development URL in your browser.
