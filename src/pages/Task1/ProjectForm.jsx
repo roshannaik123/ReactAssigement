@@ -56,7 +56,7 @@ export default function ProjectForm({ onClose }) {
   const goNext = () => setCurrentStep((s) => Math.min(s + 1, TOTAL_STEPS - 1));
   const goBack = () => setCurrentStep((s) => Math.max(s - 1, 0));
 
-  //handelCreateProject passed as prop for lastStep .previosuly created data get stored in StorgeKey
+  //handelCreateProject passed as prop for lastStep .previosuly created data get stored in Storgekey
   const handleCreateProject = () => {
     try {
       const existing = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
