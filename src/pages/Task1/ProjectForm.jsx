@@ -76,7 +76,6 @@ export default function ProjectForm({ onClose }) {
       // Show success toast before resetting/closing
       toast.success("Project created successfully!");
 
-      // Reset wizard state and close/notify parent
       setFormData(initialFormData);
       setCurrentStep(0);
       onClose?.(newProject);
